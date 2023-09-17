@@ -9,7 +9,7 @@ public class AnalizadorLex {
 
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] tokens = lexJson(line);
+                String[] tokens = lexer(line);
                 for (String token : tokens) {
                     writer.print(token + " ");
                 }
@@ -23,7 +23,7 @@ public class AnalizadorLex {
         }
     }
 
-    public static String[] lexJson(String input) {
+    public static String[] lexer(String input) {
         String pattern = "\\{|\\}|\\[|\\]|:|,|true|TRUE|false|FALSE|null|NULL|\"[^\"]*\"|-?\\d+";
 
         // Crear un patrón de expresión regular
