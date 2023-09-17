@@ -24,7 +24,6 @@ public class AnalizadorLex {
     }
 
     public static String[] lexJson(String input) {
-        // Definir los patrones de los tokens
         String pattern = "\\{|\\}|\\[|\\]|:|,|true|TRUE|false|FALSE|null|NULL|\"[^\"]*\"|-?\\d+";
 
         // Crear un patrón de expresión regular
@@ -33,7 +32,7 @@ public class AnalizadorLex {
         // Usar el patrón para buscar coincidencias en la entrada
         Matcher matcher = regex.matcher(input);
 
-        // Almacenar los tokens encontrados en una lista
+        // Listado de Matcheos por TOKEN
         StringBuilder tokenList = new StringBuilder();
         while (matcher.find()) {
             String token = matcher.group();
@@ -86,7 +85,6 @@ public class AnalizadorLex {
             tokenList.append(" ");
         }
 
-        // Dividir la lista de tokens en un arreglo
         return tokenList.toString().trim().split(" ");
     }
 }
